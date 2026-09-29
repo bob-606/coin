@@ -16,7 +16,7 @@ export default function CheckoutPage() {
 
   if (done)
     return (
-      <div className="section">
+      <div className="container section">
         <h2>Order received</h2>
         <p className="muted">Thanks {form.name || "collector"}! We will email you payment and tracking details.</p>
         <Link href="/shop" className="btn btn-primary">Back to shop</Link>
@@ -24,7 +24,7 @@ export default function CheckoutPage() {
     );
 
   return (
-    <div className="section">
+    <div className="container section">
       <h2>Checkout</h2>
       <p className="muted">Enter your details — we confirm payment and shipping by email.</p>
       <div className="detail">

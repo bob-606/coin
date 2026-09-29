@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <div className="section">
+    <div className="container section">
       <h2>About — shipping & trust</h2>
       <p className="muted">How we pack, grade and ship every coin.</p>
       <div className="grid" style={{ marginTop: 14 }}>

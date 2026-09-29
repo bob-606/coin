@@ -8,9 +8,9 @@ export default function CartPage() {
   const lines = Object.entries(items).map(([id, qty]) => ({ p: products.find((x) => x.id === id), qty })).filter((l) => l.p);
   const total = lines.reduce((s, l) => s + l.p.price * l.qty, 0);
   if (lines.length === 0)
-    return <div className="section"><h2>Cart is empty</h2><p className="muted">Add some coins to get started.</p><Link href="/shop" className="btn btn-primary">Browse shop</Link></div>;
+    return <div className="container section"><h2>Cart is empty</h2><p className="muted">Add some coins to get started.</p><Link href="/shop" className="btn btn-primary">Browse shop</Link></div>;
   return (
-    <div className="section">
+    <div className="container section">
       <h2>Cart — {lines.length} lines</h2>
       {lines.map(({ p, qty }) => (
         <div key={p.id} className="cart-row">

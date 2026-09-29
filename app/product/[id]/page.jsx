@@ -8,9 +8,9 @@ export default function ProductPage() {
   const { id } = useParams();
   const p = products.find((x) => x.id === id);
   const { add } = useCart();
-  if (!p) return <div className="section"><h2>Not found</h2><Link href="/shop" className="btn">Back to shop</Link></div>;
+  if (!p) return <div className="container section"><h2>Not found</h2><Link href="/shop" className="btn">Back to shop</Link></div>;
   return (
-    <div className="detail">
+    <div className="container detail">
       <div className="photo-frame">
         <span className="badge">{p.tag}</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}

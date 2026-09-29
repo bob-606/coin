@@ -12,7 +12,8 @@ export default function Navbar() {
           <span>EU Coin Vault</span>
         </Link>
         <div className="nav-links">
-          <Link href="/shop">Shop</Link>
+          <Link href="/">Home</Link>
+          <Link href="/shop">Coins</Link>
           <Link href="/about">About</Link>
           <Link href="/cart">Cart ({count})</Link>
           <Link href="/checkout" className="btn btn-primary" style={{ padding: "8px 14px" }}>

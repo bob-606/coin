@@ -18,7 +18,7 @@ const credits = [
 
 export default function CreditsPage() {
   return (
-    <div className="section">
+    <div className="container section">
       <h2>Photo credits</h2>
       <p className="muted">
         Product photos are used from Wikimedia Commons under Creative Commons licences
