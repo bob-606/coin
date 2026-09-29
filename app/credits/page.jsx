@@ -16,6 +16,16 @@ const credits = [
   ["severus-denarius.jpg", "Denarius of Septimius Severus (FindID 67893)", "Wikimedia Commons / Portable Antiquities"],
 ];
 
+const logoCredits = [
+  ["eesti-pank.svg", "Seal of the Bank of Estonia", "Wikimedia Commons"],
+  ["latvijas-banka.png", "Latvijas Banka logo", "Wikimedia Commons (PD-textlogo)"],
+  ["lietuvos-bankas.svg", "Lietuvos Bankas logo", "English Wikipedia (fair use, trademark of the Bank of Lithuania)"],
+  ["ecb.svg", "ECB logo", "Wikimedia Commons"],
+  ["monnaie-de-paris.svg", "Monnaie de Paris logo", "French Wikipedia (fair use, trademark of Monnaie de Paris)"],
+  ["munze-oesterreich.svg", "Münze Österreich logo", "Wikimedia Commons"],
+  ["us-mint.svg", "US Mint logo", "Wikimedia Commons (US public domain)"],
+];
+
 export default function CreditsPage() {
   return (
     <div className="container section">
@@ -29,6 +39,20 @@ export default function CreditsPage() {
         <table className="table">
           <tbody>
             {credits.map(([file, title, src]) => (
+              <tr key={file}><td>{file}</td><td>{title} — {src}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <h2 style={{ marginTop: 28 }}>Logo credits</h2>
+      <p className="muted">
+        Institution logos in the “Sourcing from” strip belong to their respective owners
+        and are shown for identification only. Replace with partner logos before going live.
+      </p>
+      <div className="panel" style={{ marginTop: 14 }}>
+        <table className="table">
+          <tbody>
+            {logoCredits.map(([file, title, src]) => (
               <tr key={file}><td>{file}</td><td>{title} — {src}</td></tr>
             ))}
           </tbody>

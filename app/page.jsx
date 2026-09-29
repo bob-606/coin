@@ -9,15 +9,15 @@ import { products, categories, formatEUR } from "../data/products";
 import { seedReviews } from "../data/reviews";
 
 const sources = [
-  { name: "Eesti Pank", code: "EE", color: "#0072CE" },
-  { name: "Latvijas Banka", code: "LV", color: "#9E3039" },
-  { name: "Lietuvos Bankas", code: "LT", color: "#006A44" },
+  { name: "Eesti Pank", logo: "/logos/eesti-pank.svg" },
+  { name: "Latvijas Banka", logo: "/logos/latvijas-banka.png" },
+  { name: "Lietuvos Bankas", logo: "/logos/lietuvos-bankas.svg" },
+  { name: "European Central Bank", logo: "/logos/ecb.svg" },
+  { name: "Monnaie de Paris", logo: "/logos/monnaie-de-paris.svg" },
+  { name: "Münze Österreich", logo: "/logos/munze-oesterreich.svg" },
+  { name: "United States Mint", logo: "/logos/us-mint.svg" },
   { name: "Collector auctions", code: "AH", color: "#7C3AED" },
   { name: "German dealers", code: "DE", color: "#B45309" },
-  { name: "Moscow Mint", code: "MM", color: "#B91C1C" },
-  { name: "Paris Mint", code: "FR", color: "#4338CA" },
-  { name: "Vienna Mint", code: "AT", color: "#0E7490" },
-  { name: "US consignments", code: "US", color: "#1F2937" },
   { name: "Estate lots", code: "EL", color: "#A16207" },
   { name: "Numismatic fairs", code: "NF", color: "#C026D3" },
 ];
@@ -75,7 +75,15 @@ export default function Home() {
             {[0, 1].map((n) => (
               <div key={n} className="marquee-track" aria-hidden={n === 1}>
                 {sources.map((s) => (
-                  <span key={s.name} className="src"><i style={{ background: s.color }}>{s.code}</i>{s.name}</span>
+                  <span key={s.name} className="src">
+                    {s.logo ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={s.logo} alt={`${s.name} logo`} className="src-logo" />
+                    ) : (
+                      <i style={{ background: s.color }}>{s.code}</i>
+                    )}
+                    {s.name}
+                  </span>
                 ))}
               </div>
             ))}
