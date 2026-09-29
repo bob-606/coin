@@ -1,9 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 import EmailAlerts from "../components/EmailAlerts";
 import Transit from "../components/Transit";
-import { products, categories } from "../data/products";
+import { Stars } from "../components/Reviews";
+import { products, categories, formatEUR } from "../data/products";
+import { seedReviews } from "../data/reviews";
 
 const sources = [
   "Eesti Pank", "Latvijas Banka", "Lietuvos Bankas",
@@ -15,23 +18,45 @@ const sources = [
 export default function Home() {
   const arrivals = products.slice(0, 6);
   const featured = products.filter((p) => p.price >= 65).slice(0, 6);
+  const spotlight = products.find((p) => p.id === "france-20fr-1908-rooster");
+  const testimonials = [
+    { pid: "morgan-1889", key: 0 },
+    { pid: "france-20fr-1908-rooster", key: 0 },
+    { pid: "roman-denarius-severus", key: 0 },
+  ].map(({ pid, key }) => ({ pid, r: seedReviews[pid][key] }));
   return (
     <>
       <div className="container">
         <div className="hero">
-          <div className="hero-center">
-            <span className="kicker">{products.length} coins in stock · ships worldwide</span>
-            <h1>Every collectible coin, one search away.</h1>
-            <p className="sub">
-              EU Coin Vault pulls Baltic euros, Soviet history, world silver and gold
-              into one queue — so you compare coins and prices in one place, not a dozen tabs.
-            </p>
-            <SearchBar />
-            <div className="stats">
-              <div className="stat"><b>{products.length}</b><span>Coins in stock</span></div>
-              <div className="stat"><b>{categories.length - 1}</b><span>Collections</span></div>
-              <div className="stat"><b>24–48h</b><span>Dispatch from the EU</span></div>
+          <div className="hero-grid">
+            <div>
+              <span className="kicker">{products.length} coins in stock · ships worldwide</span>
+              <h1>Every collectible coin, one search away.</h1>
+              <p className="sub">
+                EU Coin Vault pulls Baltic euros, Soviet history, world silver and gold
+                into one queue — so you compare coins and prices in one place, not a dozen tabs.
+              </p>
+              <SearchBar />
+              <div className="stats">
+                <div className="stat"><b>{products.length}</b><span>Coins in stock</span></div>
+                <div className="stat"><b>{categories.length - 1}</b><span>Collections</span></div>
+                <div className="stat"><b>24–48h</b><span>Dispatch from the EU</span></div>
+              </div>
             </div>
+            <Link href={`/product/${spotlight.id}`} className="card feature-card">
+              <div className="feature-photo">
+                <span className="badge">Coin of the week</span>
+                <Image src={spotlight.image} alt={spotlight.name} fill sizes="(max-width: 900px) 100vw, 40vw" priority style={{ objectFit: "contain", padding: 20 }} />
+              </div>
+              <div className="card-body">
+                <div className="muted">{spotlight.country} · {spotlight.year} · {spotlight.grade}</div>
+                <b style={{ fontSize: 18 }}>{spotlight.name}</b>
+                <div className="price-row">
+                  <span className="feature-price">{formatEUR(spotlight.price)}</span>
+                  <span className="btn btn-primary">View →</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -106,6 +131,21 @@ export default function Home() {
               <h3>Tracked to your door</h3>
               <p className="muted">Dispatched from the EU in 24–48h, tracked + insured, signature over €150.</p>
             </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <span className="chnum">04 — COLLECTORS SAY</span>
+          <h2>Trusted parcel after parcel.</h2>
+          <div className="testi-grid">
+            {testimonials.map(({ pid, r }) => (
+              <Link key={pid} href={`/product/${pid}`} className="panel">
+                <Stars n={r.rating} />
+                <b style={{ display: "block", marginTop: 8 }}>{r.title}</b>
+                <p className="muted" style={{ color: "var(--text)" }}>“{r.text}”</p>
+                <div className="muted">— {r.name}, {r.country}</div>
+              </Link>
+            ))}
           </div>
         </div>
 

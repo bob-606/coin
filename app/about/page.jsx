@@ -53,6 +53,33 @@ export default function AboutPage() {
           <Link href="/guides" className="btn btn-ghost">Read the guides</Link>
         </div>
       </div>
+
+      <div className="section" style={{ paddingBottom: 0, maxWidth: 760 }}>
+        <span className="chnum">04 — FAQ</span>
+        <h2 style={{ fontSize: 24 }}>Questions, answered</h2>
+        <div style={{ marginTop: 14 }}>
+          <details className="faq" open>
+            <summary>Are your coins genuine?</summary>
+            <p>Yes — every coin is checked for weight, diameter, edge and surfaces before listing, and every ancient or high-value coin is guaranteed genuine for life. Certified coins include verifiable NGC/PCGS numbers.</p>
+          </details>
+          <details className="faq">
+            <summary>How long does shipping take?</summary>
+            <p>Dispatch in 24–48h. Standard tracked: 3–6 business days in Europe, 7–14 days to the USA and Australia. Express: 1–3 days in Europe, 2–5 days worldwide. Tracking is emailed the day your parcel ships.</p>
+          </details>
+          <details className="faq">
+            <summary>Will I pay customs or VAT?</summary>
+            <p>Within the EU: no customs, no extra charges. To the USA, most collectible coins enter duty-free. Any import charges outside the EU are the buyer's responsibility but are rare at these values.</p>
+          </details>
+          <details className="faq">
+            <summary>What if the coin is not as described?</summary>
+            <p>14-day returns, no questions beyond a photo of what arrived. If a major grading service ever disagrees with our authenticity call, we refund in full — for life.</p>
+          </details>
+          <details className="faq">
+            <summary>Can I combine shipping on several coins?</summary>
+            <p>Yes — add everything to one cart and shipping is charged once. Sets already bundle the discount. Leave a note at checkout for gift wrap.</p>
+          </details>
+        </div>
+      </div>
     </div>
   );
 }

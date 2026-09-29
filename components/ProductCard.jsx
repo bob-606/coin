@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { formatEUR, isNew } from "../data/products";
 import { useCart } from "./CartProvider";
 
@@ -18,8 +19,7 @@ export default function ProductCard({ p }) {
     <div className="card">
       <Link href={`/product/${p.id}`} className="coin-visual photo">
         <span className="badge">{p.tag}</span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={p.image} alt={p.name} loading="lazy" />
+        <Image src={p.image} alt={p.name} fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" />
       </Link>
       <div className="card-body">
         <div className="seller-row">

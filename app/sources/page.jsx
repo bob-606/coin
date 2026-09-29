@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products, sources } from "../../data/products";
 
 export const metadata = {
@@ -19,8 +20,9 @@ export default function SourcesPage() {
             const img = (products.find((p) => p.source === s.name) || {}).image;
             return (
               <Link key={s.name} href={`/shop?src=${encodeURIComponent(s.name)}`} className="card source-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                {img && <img src={img} alt={s.name} loading="lazy" className="source-img" />}
+                <div className="source-img-wrap">
+                  {img && <Image src={img} alt={s.name} fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" />}
+                </div>
                 <div className="card-body">
                   <b style={{ fontSize: 17 }}>{s.name} <span style={{ color: "var(--green)" }}>✓</span></b>
                   <div className="muted">{n} coin{n === 1 ? "" : "s"}</div>

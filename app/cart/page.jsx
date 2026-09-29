@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { products, formatEUR } from "../../data/products";
 import { useCart } from "../../components/CartProvider";
 
@@ -15,7 +16,7 @@ export default function CartPage() {
       {lines.map(({ p, qty }) => (
         <div key={p.id} className="cart-row">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={p.image} alt={p.name} className="cart-thumb" />
+          <Image src={p.image} alt={p.name} width={60} height={60} className="cart-thumb" />
           <div style={{ flex: 1 }}>
             <Link href={`/product/${p.id}`} style={{ fontWeight: 700 }}>{p.name}</Link>
             <div className="muted">{formatEUR(p.price)} · {p.country}</div>

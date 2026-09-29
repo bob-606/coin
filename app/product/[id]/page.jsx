@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import ProductCard, { Verified } from "../../../components/ProductCard";
+import Reviews from "../../../components/Reviews";
 import { products, formatEUR } from "../../../data/products";
 import { useCart } from "../../../components/CartProvider";
 
@@ -31,8 +33,7 @@ export default function ProductPage() {
           <div>
             <div className="photo-frame">
               <span className="badge">{p.tag}</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.image} alt={p.name} />
+              <Image src={p.image} alt={p.name} fill sizes="(max-width: 860px) 100vw, 50vw" priority />
             </div>
             <div className="panel" style={{ marginTop: 14 }}>
               <h3 style={{ margin: "0 0 8px" }}>Shipping & returns</h3>
@@ -82,6 +83,8 @@ export default function ProductPage() {
             </div>
           </div>
         </div>
+
+        <Reviews productId={p.id} />
 
         <div className="section">
           <h2>You might also like</h2>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products, categories } from "../../data/products";
 
 export const metadata = {
@@ -35,8 +36,9 @@ export default function CollectionsPage() {
             const items = products.filter((p) => p.category === c);
             return (
               <Link key={c} href={`/collections/${slug(c)}`} className="card source-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={items[0].image} alt={c} loading="lazy" className="source-img" />
+                <div className="source-img-wrap">
+                  <Image src={items[0].image} alt={c} fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" />
+                </div>
                 <div className="card-body">
                   <b style={{ fontSize: 17 }}>{c} <span style={{ color: "var(--green)" }}>✓</span></b>
                   <div className="muted">{items.length} coin{items.length === 1 ? "" : "s"}</div>
