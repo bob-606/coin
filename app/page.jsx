@@ -2,6 +2,7 @@ import Link from "next/link";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 import EmailAlerts from "../components/EmailAlerts";
+import Transit from "../components/Transit";
 import { products, categories } from "../data/products";
 
 const sources = [
@@ -54,6 +55,7 @@ export default function Home() {
         <div className="section">
           <div className="section-head">
             <div>
+              <span className="chnum">01 — ARRIVALS</span>
               <h2>Fresh arrivals</h2>
               <p className="muted" style={{ margin: 0 }}>New Baltic euros, silver and ancient coins.</p>
             </div>
@@ -63,11 +65,15 @@ export default function Home() {
             {arrivals.map((p) => <ProductCard key={p.id} p={p} />)}
           </div>
         </div>
+      </div>
 
+      <Transit left="Tracked shipping" right="EU → World" />
+
+      <div className="container">
         <div className="section">
           <div className="section-head">
             <div>
-              <span className="kicker">Featured</span>
+              <span className="chnum">02 — FEATURED</span>
               <h2>Worth a closer look.</h2>
             </div>
             <Link href="/shop" className="link-more">View all coins →</Link>
@@ -76,9 +82,13 @@ export default function Home() {
             {featured.map((p) => <ProductCard key={p.id} p={p} />)}
           </div>
         </div>
+      </div>
 
+      <Transit left="No fakes" right="Guaranteed genuine" />
+
+      <div className="container">
         <div className="section">
-          <span className="kicker">How it works</span>
+          <span className="chnum">03 — HOW IT WORKS</span>
           <h2>From scattered dealers to one queue.</h2>
           <div className="steps">
             <div className="step">

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "./CartProvider";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -27,12 +28,14 @@ export default function Navbar() {
             <Link key={l.href} href={l.href}>{l.label}</Link>
           ))}
           <Link href="/cart">Cart ({count})</Link>
+          <ThemeToggle />
           <Link href="/checkout" className="btn btn-primary" style={{ padding: "8px 14px" }}>
             Checkout
           </Link>
         </div>
         <div className="mobile-only" style={{ display: "flex", gap: 10, alignItems: "center" }}>
           <Link href="/cart" className="btn" style={{ padding: "8px 12px" }}>Cart ({count})</Link>
+          <ThemeToggle />
           <button className="btn" style={{ padding: "8px 12px" }} onClick={() => setOpen((o) => !o)} aria-label="Menu">
             ☰
           </button>

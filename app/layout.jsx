@@ -1,9 +1,10 @@
 import "./globals.css";
 import Link from "next/link";
+import Script from "next/script";
 import { CartProvider } from "../components/CartProvider";
 import Navbar from "../components/Navbar";
 import CookieBanner from "../components/CookieBanner";
-import { products, categories, countries, priceBuckets } from "../data/products";
+import { products, categories, countries, priceBuckets, sources } from "../data/products";
 
 export const metadata = {
   title: "EU Coin Vault — Every collectible coin, one search away",
@@ -13,8 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const cats = categories.filter((c) => c !== "All");
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
+        <Script src="/theme-init.js" strategy="beforeInteractive" />
         <CartProvider>
           <Navbar />
           <main>{children}</main>
@@ -53,7 +55,14 @@ export default function RootLayout({ children }) {
                   <Link href="/credits">Photo credits</Link>
                 </div>
               </div>
-              <div>© 2026 EU Coin Vault — collectible coins shipped from the EU worldwide. {countries.length} countries of origin.</div>
+              <div className="sysbar">
+                <span>SYS EU-COIN-VAULT</span>
+                <span>YEAR 2026</span>
+                <span className="ok">STATUS ONLINE</span>
+                <span>{products.length} COINS</span>
+                <span>{sources.length} SOURCES</span>
+              </div>
+              <div style={{ marginTop: 10 }}>© 2026 EU Coin Vault — collectible coins shipped from the EU worldwide. {countries.length} countries of origin.</div>
               <div style={{ marginTop: 6 }}>Product photos: Wikimedia Commons contributors (CC licences) — see photo credits. Replace with your own photos before going live.</div>
             </div>
           </footer>

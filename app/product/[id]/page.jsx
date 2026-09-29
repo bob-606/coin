@@ -66,15 +66,14 @@ export default function ProductPage() {
             <p className="muted">Listed {p.added} · {p.stock <= 4 ? <span className="low-stock">Only {p.stock} left in stock</span> : `${p.stock} in stock`} · Sourced from {p.source}</p>
 
             <div className="panel" style={{ marginTop: 8 }}>
-              {p.description.map((d, i) => <p key={i} style={{ margin: i === 0 ? "0 0 10px" : "0 0 10px", lineHeight: 1.65 }}>{d}</p>)}
-              <table className="table" style={{ marginTop: 12 }}>
-                <tbody>
-                  <tr><td>Condition</td><td>{p.grade}</td></tr>
-                  <tr><td>Country / Year</td><td>{p.country} / {p.year}</td></tr>
-                  <tr><td>Weight / Diameter</td><td>{p.weight} / {p.diameter}</td></tr>
-                  <tr><td>Source</td><td>{p.source}</td></tr>
-                </tbody>
-              </table>
+              {p.description.map((d, i) => <p key={i} style={{ margin: "0 0 10px", lineHeight: 1.65 }}>{d}</p>)}
+              <div className="stat-tiles">
+                <div className="stat-tile"><span>Year</span><b>{p.year}</b></div>
+                <div className="stat-tile"><span>Weight</span><b>{p.weight}</b></div>
+                <div className="stat-tile"><span>Diameter</span><b>{p.diameter}</b></div>
+                <div className="stat-tile"><span>Grade</span><b style={{ fontSize: 15 }}>{p.grade}</b></div>
+              </div>
+              <span className="ref-line">REF {p.id.toUpperCase().replace(/-/g, " ")} · {p.source.toUpperCase()}</span>
             </div>
 
             <div style={{ display: "flex", gap: 8, marginTop: 14, flexWrap: "wrap" }}>

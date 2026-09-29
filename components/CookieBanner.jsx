@@ -17,7 +17,7 @@ export default function CookieBanner() {
   return (
     <div className="cookie-banner">
       <div className="container cookie-inner">
-        <p className="muted" style={{ margin: 0, color: "#344054" }}>
+        <p className="muted" style={{ margin: 0, color: "var(--text)" }}>
           We use cookies to understand how visitors use this site and improve it. See our <Link href="/about" style={{ textDecoration: "underline" }}>About page</Link> for details.
         </p>
         <div style={{ display: "flex", gap: 8 }}>

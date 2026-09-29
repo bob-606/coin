@@ -1,15 +1,57 @@
+import Link from "next/link";
+import BuyerChecklist from "../../components/BuyerChecklist";
+
 export default function AboutPage() {
   return (
     <div className="container section">
-      <h2>About — shipping & trust</h2>
-      <p className="muted">How we pack, grade and ship every coin.</p>
-      <div className="grid" style={{ marginTop: 14 }}>
-        <div className="panel"><h3>1. Sourcing</h3><p className="muted">Central banks, collectors, dealers and auctions. Provenance for ancient / medieval coins. No counterfeits.</p></div>
-        <div className="panel"><h3>2. Grading</h3><p className="muted">Graded: company + grade + cert. Ungraded: Uncirculated / Extra Fine / Fine. Photos of obverse + reverse, weight and diameter.</p></div>
-        <div className="panel"><h3>3. Pricing</h3><p className="muted">Prices in EUR. VAT handled at checkout by destination country.</p></div>
-        <div className="panel"><h3>4. Shipping</h3><p className="muted">Coin flip + bubble mailer, tracked + insured. Signature over €150. Dispatch in 24–48h.</p></div>
-        <div className="panel"><h3>5. Returns</h3><p className="muted">14-day returns if the coin differs from photos or description. Graded coins verified by cert number.</p></div>
-        <div className="panel"><h3>6. Contact</h3><p className="muted">Questions about a coin, offer for a set, or combined shipping — leave a note at checkout and we reply by email.</p></div>
+      <span className="kicker">Pathway manual</span>
+      <h2>How we pack, grade and ship every coin.</h2>
+      <p className="muted">One manual, three parts: check before you buy, know the warnings, know how shipping works.</p>
+
+      <div className="section" style={{ paddingBottom: 0 }}>
+        <span className="chnum">01 — CHECKLIST</span>
+        <h2 style={{ fontSize: 24 }}>Before you buy</h2>
+        <div style={{ marginTop: 14, maxWidth: 720 }}>
+          <BuyerChecklist />
+        </div>
+      </div>
+
+      <div className="section" style={{ paddingBottom: 0 }}>
+        <span className="chnum">02 — WARNINGS</span>
+        <h2 style={{ fontSize: 24 }}>Key warnings</h2>
+        <div className="warn-grid">
+          <div className="warn-card">
+            <span className="warn-icon">⚠</span>
+            <h3>Never clean a coin</h3>
+            <p className="muted">Cleaning destroys collector value instantly. A cleaned coin is worth melt — leave patina alone.</p>
+          </div>
+          <div className="warn-card">
+            <span className="warn-icon">⚠</span>
+            <h3>Cast copies look soft</h3>
+            <p className="muted">Mushy details and tiny surface bubbles mean a cast fake. Compare against certified genuine photos.</p>
+          </div>
+          <div className="warn-card">
+            <span className="warn-icon">⚠</span>
+            <h3>Too good means fake</h3>
+            <p className="muted">A gold rooster at half market price is not a bargain. Check weight, edge and seller guarantees first.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="section" style={{ paddingBottom: 0 }}>
+        <span className="chnum">03 — SHIPPING & TRUST</span>
+        <h2 style={{ fontSize: 24 }}>How every order works</h2>
+        <div className="grid" style={{ marginTop: 14 }}>
+          <div className="panel"><h3>Sourcing</h3><p className="muted">Central banks, collectors, dealers and auctions. Provenance for ancient coins. No counterfeits.</p></div>
+          <div className="panel"><h3>Grading</h3><p className="muted">Uncirculated down to Fine, stated honestly. Photos of obverse + reverse, weight and diameter.</p></div>
+          <div className="panel"><h3>Packing</h3><p className="muted">Flip or capsule, taped immobile, bubble mailer. Gold ships double-packed, unmarked, express.</p></div>
+          <div className="panel"><h3>Delivery</h3><p className="muted">Tracked + insured, 24–48h dispatch. Signature over €150. 14-day returns if misdescribed.</p></div>
+        </div>
+        <div style={{ display: "flex", gap: 10, marginTop: 18, flexWrap: "wrap" }}>
+          <Link href="/shop" className="btn btn-primary">Browse coins →</Link>
+          <Link href="/contact" className="btn">Contact us</Link>
+          <Link href="/guides" className="btn btn-ghost">Read the guides</Link>
+        </div>
       </div>
     </div>
   );
