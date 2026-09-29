@@ -78,6 +78,7 @@ export const guides = [
         h: "Speed and tracking",
         body: [
           "Orders dispatch from the EU within 24–48 hours on business days. Standard tracked shipping takes 5–9 business days within Europe and 7–14 days to the USA and Australia. Every parcel has door-to-door tracking — you receive the number by email the day it ships.",
+          "Small EU orders under €25 can choose economy letter post (€2.90, untracked, at your own risk) — sensible for a €2.50 kopek, never for gold.",
         ],
       },
       {

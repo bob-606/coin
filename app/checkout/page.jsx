@@ -112,7 +112,7 @@ export default function CheckoutPage() {
                 <input value={form.street} onChange={(e) => set("street", e.target.value)} placeholder="Brīvības iela 12-4" />
               </Field>
               <Field label="Country" error={null}>
-                <select value={form.country} onChange={(e) => set("country", e.target.value)}>
+                <select value={form.country} onChange={(e) => { set("country", e.target.value); set("method", "standard"); }}>
                   {ALL_COUNTRIES.map((c) => <option key={c}>{c}</option>)}
                 </select>
               </Field>
