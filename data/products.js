@@ -9,8 +9,14 @@ export const products = [
     country: "Estonia",
     year: 2020,
     stock: 48,
+    added: "2026-09-12",
+    source: "Baltic central banks",
     tag: "Baltic pick",
     blurb: "BU coin in capsule. Ships from EU with tracking.",
+    description: [
+      "Issued by Estonia to mark 100 years since the 1920 Peace of Tartu, this 2 euro commemorative is one of the most requested Baltic coins from US and German buyers.",
+      "Our specimens are brilliant uncirculated, supplied in protective capsules. The common 2 euro reverse is paired with the Tartu commemorative obverse — photos show the actual coin type you will receive.",
+    ],
     weight: "8.5 g",
     diameter: "25.75 mm",
   },
@@ -24,8 +30,14 @@ export const products = [
     country: "Latvia",
     year: 2022,
     stock: 65,
+    added: "2026-09-10",
+    source: "Baltic central banks",
     tag: "High demand",
     blurb: "Sought-after Latvian 2 euro commemorative.",
+    description: [
+      "Latvian 2 euro commemoratives are consistently among the fastest sellers in our euro section — small mintages and distinctive national designs drive steady demand abroad.",
+      "This Flow-design specimen is uncirculated and ships in a capsule. A perfect starter coin for a Baltic collection or a low-cost gift with a story.",
+    ],
     weight: "8.5 g",
     diameter: "25.75 mm",
   },
@@ -39,8 +51,14 @@ export const products = [
     country: "Lithuania",
     year: 2022,
     stock: 80,
+    added: "2026-08-28",
+    source: "Baltic central banks",
     tag: "Baltic pick",
     blurb: "Lithuanian basketball centenary issue.",
+    description: [
+      "Basketball is close to a religion in Lithuania, and this 2022 centenary 2 euro is the coin Lithuanian expats ask for most.",
+      "About-uncirculated specimens with full lustre. Combine with the Estonian and Latvian coins in our Baltic Trio set and save on shipping.",
+    ],
     weight: "8.5 g",
     diameter: "25.75 mm",
   },
@@ -54,8 +72,14 @@ export const products = [
     country: "Baltics",
     year: 2022,
     stock: 30,
+    added: "2026-09-05",
+    source: "Baltic central banks",
     tag: "Best for gifts",
     blurb: "Three Baltic commemoratives in capsules + printed issues map.",
+    description: [
+      "One parcel, three countries: our best Estonian, Latvian and Lithuanian 2 euro commemoratives, each in its own capsule, with a printed map of euro commemorative issues as a bonus.",
+      "This is the set we recommend to every first-time buyer — it shows the range of Baltic coinage and qualifies for combined tracked shipping.",
+    ],
     weight: "3×8.5 g",
     diameter: "25.75 mm",
   },
@@ -69,8 +93,14 @@ export const products = [
     country: "USSR",
     year: 1980,
     stock: 40,
+    added: "2026-08-20",
+    source: "Collector auctions",
     tag: "Story coin",
     blurb: "Olympic issue, great story for collectors and gifts.",
+    description: [
+      "The Moscow 1980 Olympic rouble series was the first Olympic coinage most Western collectors ever saw from the USSR, and it remains the entry point to Soviet numismatics.",
+      "Copper-nickel issue in extra-fine condition with clear details. Each coin tells the story of the boycotted Games — our most gifted history coin.",
+    ],
     weight: "12.8 g",
     diameter: "31 mm",
   },
@@ -84,8 +114,14 @@ export const products = [
     country: "USSR",
     year: 1974,
     stock: 120,
+    added: "2026-08-15",
+    source: "Collector auctions",
     tag: "Low price",
     blurb: "Affordable entry piece of Soviet history.",
+    description: [
+      "A genuine Brezhnev-era 5 kopek piece — the coin that bought an ice cream in 1974 Leningrad.",
+      "Circulated Fine condition, honestly described. Buy several to combine shipping, or add one to any order as a conversation piece.",
+    ],
     weight: "5 g",
     diameter: "25 mm",
   },
@@ -99,8 +135,14 @@ export const products = [
     country: "German Kiautschou",
     year: 1909,
     stock: 3,
+    added: "2026-09-02",
+    source: "German dealers",
     tag: "Rare",
     blurb: "Scarce German colonial issue. Collector grade.",
+    description: [
+      "Struck for the German Kiautschou Bay concession in China, these 5 cent pieces circulated for barely five years before the territory was lost in 1914.",
+      "Extra-fine specimen with sharp characters on both sides. Genuine German colonial coins in this grade are genuinely scarce — we have three.",
+    ],
     weight: "≈9 g",
     diameter: "27 mm",
   },
@@ -114,8 +156,14 @@ export const products = [
     country: "Austria",
     year: "1780 restrike",
     stock: 22,
+    added: "2026-08-25",
+    source: "Austrian mints",
     tag: "World classic",
     blurb: "The most traded world silver crown.",
+    description: [
+      "The Maria Theresa Thaler has been struck continuously since 1780 and circulated as trade money from the Horn of Africa to the Arabian Peninsula.",
+      "Official modern restrike in uncirculated condition with full mint bloom — 28 grams of fine silver history and the most liquid world crown we sell.",
+    ],
     weight: "28.06 g",
     diameter: "41 mm",
   },
@@ -129,8 +177,14 @@ export const products = [
     country: "USA",
     year: 1889,
     stock: 4,
+    added: "2026-09-08",
+    source: "US consignments",
     tag: "US classic",
     blurb: "Classic American silver dollar, bright details.",
+    description: [
+      "The Morgan dollar is the coin that built American numismatics — big, silver, and unmistakable.",
+      "This 1889 issue grades extra fine with bright devices and honest circulation. Sourced from a US consignment, now stocked in the EU for fast dispatch to European buyers.",
+    ],
     weight: "26.73 g",
     diameter: "38.1 mm",
   },
@@ -144,8 +198,14 @@ export const products = [
     country: "France",
     year: 1908,
     stock: 1,
+    added: "2026-09-15",
+    source: "Collector auctions",
     tag: "Gold",
     blurb: "French gold rooster. Insured express shipping.",
+    description: [
+      "The gold 'Rooster' is France's most beloved coin — Marianne on the obverse, the Gallic rooster on the reverse, nearly six grams of gold.",
+      "About-uncirculated with original lustre. Ships express, fully insured, signature on delivery. Serious inquiries welcome before ordering.",
+    ],
     weight: "6.45 g",
     diameter: "21 mm",
   },
@@ -159,8 +219,14 @@ export const products = [
     country: "Russia",
     year: 1898,
     stock: 6,
+    added: "2026-08-18",
+    source: "Estate lots",
     tag: "Imperial",
     blurb: "Late-imperial silver rouble with Romanov crest.",
+    description: [
+      "Struck in the reign of the last Tsar, this 1898 silver rouble carries the Romanov double eagle — imperial Russia in the palm of your hand.",
+      "Fine condition from an old estate lot, honestly graded with clear details. A cornerstone for any Russian collection.",
+    ],
     weight: "20 g",
     diameter: "33.6 mm",
   },
@@ -174,8 +240,14 @@ export const products = [
     country: "USSR",
     year: 1980,
     stock: 8,
+    added: "2026-09-01",
+    source: "Collector auctions",
     tag: "Silver",
     blurb: "Olympic silver commemorative, obverse + reverse photographed.",
+    description: [
+      "The silver 5 rouble Olympic series paired Soviet minting quality with genuinely attractive sporting designs — this Archery issue among the best.",
+      "Proof-like surfaces, both sides photographed. An affordable way into Soviet silver with real Olympic history attached.",
+    ],
     weight: "16.67 g",
     diameter: "33 mm",
   },
@@ -189,14 +261,43 @@ export const products = [
     country: "Roman Empire",
     year: "193–211 AD",
     stock: 3,
+    added: "2026-09-18",
+    source: "Estate lots",
     tag: "Provenance",
     blurb: "Ancient silver denarius with collection ticket.",
+    description: [
+      "A silver denarius of Septimius Severus, the African emperor who ruled Rome from 193 to 211 AD — eighteen centuries old and still legible.",
+      "Fine condition with old-collection provenance ticket included. Every ancient coin we sell is guaranteed genuine for life.",
+    ],
     weight: "≈3.2 g",
     diameter: "≈19 mm",
   },
 ];
 
 export const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
+
+export const countries = Array.from(new Set(products.map((p) => p.country))).sort();
+
+export const sources = [
+  { name: "Baltic central banks", blurb: "Mint-direct Baltic euro commemoratives in capsules — Eesti Pank, Latvijas Banka, Lietuvos Bankas." },
+  { name: "Collector auctions", blurb: "Soviet, French and world coins won at Baltic and German auctions, graded in-house." },
+  { name: "German dealers", blurb: "Colonial and imperial German material from long-standing dealer partners." },
+  { name: "Austrian mints", blurb: "Official Maria Theresa Thaler restrikes, sourced at mint issue." },
+  { name: "US consignments", blurb: "American silver dollars consigned in the US, stocked in the EU for fast European dispatch." },
+  { name: "Estate lots", blurb: "Imperial Russian and ancient coins with provenance from old collections." },
+];
+
+export const priceBuckets = [
+  { label: "Under €25", test: (p) => p.price < 25 },
+  { label: "€25 – €100", test: (p) => p.price >= 25 && p.price <= 100 },
+  { label: "€100 – €500", test: (p) => p.price > 100 && p.price <= 500 },
+  { label: "Over €500", test: (p) => p.price > 500 },
+];
+
+const DAY = 86400000;
+export function isNew(p, now = Date.now()) {
+  return now - new Date(p.added + "T00:00:00Z").getTime() < 45 * DAY;
+}
 
 export function formatEUR(n) {
   return `€${n.toFixed(2)}`;
