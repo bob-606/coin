@@ -30,7 +30,7 @@ export default function Navbar() {
           ))}
           <Link href="/cart">Cart ({count})</Link>
           <ThemeToggle />
-          <Link href="/checkout" className="btn btn-primary" style={{ padding: "8px 14px" }}>
+          <Link href="/checkout" className="btn btn-light" style={{ padding: "8px 14px" }}>
             Checkout
           </Link>
         </div>
