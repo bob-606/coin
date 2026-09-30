@@ -49,31 +49,35 @@ export default function Home() {
       </div>
 
       <div className="strip">
-        <div className="container strip-inner">
+        <div className="container strip-label-row">
           <div className="strip-label">Sourcing from</div>
-          <div className="marquee">
-            {[0, 1].map((n) => (
-              <div key={n} className="marquee-track" aria-hidden={n === 1}>
-                {sources.map((s) => (
-                  <span key={s.name} className="src">
-                    {s.logo ? (
+        </div>
+        <div className="marquee">
+          {[0, 1].map((n) => (
+            <div key={n} className="marquee-track" aria-hidden={n === 1 ? true : undefined}>
+              {sources.map((s) => (
+                <span key={s.name} className="src">
+                  {s.logo ? (
+                    s.logoDark ? (
                       <>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={s.logo} alt={`${s.name} logo`} className="src-logo show-light" />
-                        {s.logoDark && (
-                          /* eslint-disable-next-line @next/next/no-img-element */
-                          <img src={s.logoDark} alt="" aria-hidden className="src-logo show-dark" />
-                        )}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={s.logoDark} alt="" aria-hidden className="src-logo show-dark" />
                       </>
                     ) : (
-                      <i style={{ background: s.color }}>{s.code}</i>
-                    )}
-                    {s.name}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
+                      /* No dark variant — always show the light logo (white chip keeps it readable in dark mode) */
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={s.logo} alt={`${s.name} logo`} className="src-logo" />
+                    )
+                  ) : (
+                    <i style={{ background: s.color }}>{s.code}</i>
+                  )}
+                  {s.name}
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
