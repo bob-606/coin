@@ -19,7 +19,7 @@ export default function GuidePage({ params }) {
     <div className="container">
       <div className="section" style={{ maxWidth: 760 }}>
         <Link href="/guides" className="link-more">← All guides</Link>
-        <h2 style={{ marginTop: 10, fontSize: 36 }}>{g.title}</h2>
+        <h2 className="guide-title">{g.title}</h2>
         <p className="muted">Updated {g.updated} · EU Coin Vault</p>
         <div className="article">
           {g.sections.map((s) => (

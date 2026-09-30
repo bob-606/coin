@@ -20,7 +20,7 @@ export default function CookieBanner() {
         <p className="muted" style={{ margin: 0, color: "var(--text)" }}>
           We use cookies to understand how visitors use this site and improve it. See our <Link href="/about" style={{ textDecoration: "underline" }}>About page</Link> for details.
         </p>
-        <div style={{ display: "flex", gap: 8 }}>
+        <div className="cookie-actions">
           <button className="btn" onClick={() => decide("no")}>Decline</button>
           <button className="btn btn-primary" onClick={() => decide("yes")}>Accept</button>
         </div>

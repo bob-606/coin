@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="container nav-inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
           <span className="brand-mark">€</span>
-          <span>EU Coin Vault</span>
+          <span className="brand-text">EU Coin Vault</span>
         </Link>
         <div className="nav-links desktop-only">
           {links.map((l) => (
@@ -34,10 +34,10 @@ export default function Navbar() {
             Checkout
           </Link>
         </div>
-        <div className="mobile-only" style={{ display: "flex", gap: 10, alignItems: "center" }}>
-          <Link href="/cart" className="btn" style={{ padding: "8px 12px" }}>Cart ({count})</Link>
+        <div className="mobile-only mobile-actions">
+          <Link href="/cart" className="btn mobile-cart-btn">Cart ({count})</Link>
           <ThemeToggle />
-          <button className="btn" style={{ padding: "8px 12px" }} onClick={() => setOpen((o) => !o)} aria-label="Menu">
+          <button className="btn mobile-menu-btn" onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
             ☰
           </button>
         </div>

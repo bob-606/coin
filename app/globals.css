@@ -421,3 +421,91 @@ details.faq { border: 1px solid var(--border); border-radius: 12px; padding: 14p
 details.faq + details.faq { margin-top: 10px; }
 details.faq summary { font-weight: 700; cursor: pointer; }
 details.faq p { color: var(--muted); line-height: 1.65; margin: 8px 0 0; }
+
+/* ---- Mobile fixes ---- */
+html, body { max-width: 100%; overflow-x: clip; }
+img { max-width: 100%; }
+.container, .panel, .card, .cart-row, .section-head, .results-bar { min-width: 0; }
+.product-title { margin: 6px 0 8px; font-size: 34px; letter-spacing: -0.01em; line-height: 1.15; overflow-wrap: break-word; }
+.guide-title { margin-top: 10px; font-size: 36px; letter-spacing: -0.01em; line-height: 1.15; overflow-wrap: break-word; }
+
+/* Mobile nav actions */
+.mobile-actions { display: flex; gap: 8px; align-items: center; }
+.mobile-cart-btn, .mobile-menu-btn { padding: 8px 12px; white-space: nowrap; }
+.brand-text { white-space: nowrap; }
+.cookie-actions { display: flex; gap: 8px; }
+
+/* Cart layout (replaces old inline flex rows) */
+.cart-info { flex: 1; min-width: 0; }
+.cart-info a { overflow-wrap: break-word; }
+.cart-line-total { white-space: nowrap; }
+.cart-remove { white-space: nowrap; }
+.cart-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+.cart-total { font-size: 22px; font-weight: 800; }
+.cart-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .section-head { flex-wrap: wrap; }
+}
+@media (max-width: 640px) {
+  /* Prevent iOS Safari auto-zoom on focus */
+  input, select, textarea { font-size: 16px; }
+  .hero { padding: 44px 0 12px; }
+  h1 { font-size: clamp(30px, 8vw, 40px); }
+  .section { padding: 28px 0; }
+  .section h2 { font-size: 24px; }
+  .product-title { font-size: 26px; }
+  .guide-title { font-size: 27px; overflow-wrap: break-word; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .link-more { white-space: normal; }
+  .dark-hero { padding: 56px 0 44px; }
+  .dark-hero h1 { font-size: clamp(32px, 9vw, 44px); }
+  .dark-hero .hero-sub { font-size: 16px; }
+  .hero-search { gap: 2px; }
+  .hs-field { padding: 0 12px; min-width: 0; }
+  .hs-field input, .hs-field select { min-height: 44px; }
+  .hs-btn { min-height: 44px; width: 100%; }
+  .alert-box { padding: 24px 20px; }
+  .results-bar { flex-wrap: wrap; }
+  .results-bar select { flex: 1; min-width: 160px; }
+  .toolbar { gap: 8px; }
+  .chip { padding: 9px 13px; }
+  .btn { min-height: 40px; }
+  .qty button { width: 36px; height: 36px; }
+  .cookie-actions .btn { flex: 1; }
+  .timeline { gap: 4px; }
+  .tl-step { font-size: 11px; }
+  .tl-dot { width: 28px; height: 28px; }
+  .table { display: block; overflow-x: auto; }
+  .transit-inner { text-align: center; }
+}
+@media (max-width: 600px) {
+  /* Cart rows: info on top line, controls wrap below without overflow */
+  .cart-row { flex-wrap: wrap; row-gap: 10px; }
+  .cart-thumb { width: 52px; height: 52px; flex-shrink: 0; }
+  .cart-info { flex: 1 1 calc(100% - 66px); }
+  .qty { order: 3; }
+  .cart-line-total { order: 4; margin-left: auto; }
+  .cart-remove { order: 5; padding: 8px 12px; min-height: 36px; }
+  .cart-footer { align-items: flex-start; }
+  .cart-total { font-size: 19px; }
+  .cart-actions .btn { flex: 1 1 100%; text-align: center; }
+}
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .trust { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+  .hero-stats b { font-size: 24px; }
+}
+@media (max-width: 400px) {
+  .container { padding: 0 14px; }
+  .nav-inner { gap: 8px; height: 58px; }
+  .brand { font-size: 15px; gap: 8px; }
+  .brand-mark { width: 30px; height: 30px; }
+  .brand-text { max-width: 110px; overflow: hidden; text-overflow: ellipsis; }
+  .mobile-actions { gap: 6px; }
+  .mobile-cart-btn, .mobile-menu-btn { padding: 7px 9px; font-size: 13px; min-height: 36px; }
+  .theme-toggle { padding: 7px 9px; min-height: 36px; }
+  .theme-toggle .theme-label { display: none; }
+  .hero-stats { gap: 16px; }
+}

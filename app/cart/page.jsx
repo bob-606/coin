@@ -17,24 +17,24 @@ export default function CartPage() {
         <div key={p.id} className="cart-row">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <Image src={p.image} alt={p.name} width={60} height={60} className="cart-thumb" />
-          <div style={{ flex: 1 }}>
+          <div className="cart-info">
             <Link href={`/product/${p.id}`} style={{ fontWeight: 700 }}>{p.name}</Link>
             <div className="muted">{formatEUR(p.price)} · {p.country}</div>
           </div>
           <div className="qty">
-            <button onClick={() => setQty(p.id, qty - 1)}>-</button>
+            <button onClick={() => setQty(p.id, qty - 1)} aria-label="Decrease quantity">-</button>
             <b>{qty}</b>
-            <button onClick={() => setQty(p.id, qty + 1)}>+</button>
+            <button onClick={() => setQty(p.id, qty + 1)} aria-label="Increase quantity">+</button>
           </div>
-          <b>{formatEUR(p.price * qty)}</b>
-          <button className="btn" onClick={() => remove(p.id)}>Remove</button>
+          <b className="cart-line-total">{formatEUR(p.price * qty)}</b>
+          <button className="btn cart-remove" onClick={() => remove(p.id)}>Remove</button>
         </div>
       ))}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 18 }}>
+      <div className="cart-footer">
         <button className="btn btn-ghost" onClick={clear}>Clear</button>
-        <div style={{ fontSize: 22, fontWeight: 800 }}>Total: {formatEUR(total)}</div>
+        <div className="cart-total">Total: {formatEUR(total)}</div>
       </div>
-      <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
+      <div className="cart-actions">
         <Link href="/shop" className="btn">Continue shopping</Link>
         <Link href="/checkout" className="btn btn-primary">Checkout →</Link>
       </div>

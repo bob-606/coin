@@ -11,6 +11,11 @@ export const metadata = {
   description: "Collectible coins from the EU shipped worldwide. Baltic euros, silver, gold, ancient.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   const cats = categories.filter((c) => c !== "All");
   return (

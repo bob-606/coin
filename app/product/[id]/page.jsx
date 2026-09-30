@@ -52,7 +52,7 @@ export default function ProductPage() {
               <Verified />
             </div>
             <div className="muted" style={{ marginTop: 6 }}>{p.country} · {p.year}</div>
-            <h2 style={{ margin: "6px 0 8px", fontSize: 34 }}>{p.name}</h2>
+            <h2 className="product-title">{p.name}</h2>
             <div className="price" style={{ fontSize: 30 }}>{formatEUR(p.price)}</div>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
               <button className="btn btn-primary" onClick={() => add(p.id)}>Add to cart →</button>
